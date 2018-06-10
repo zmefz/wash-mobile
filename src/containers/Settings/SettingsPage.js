@@ -1,21 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Text, View } from 'react-native'
+import SettingsPageView from './SettingsPageView'
 
 export default class SettingsPage extends React.Component {
-  static propTypes = {
-    name: PropTypes.string,
-  }
-
-  constructor(props) {
-    super(props)
-  }
+  static propTypes = {}
 
   render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings</Text>
-      </View>
-    )
+    return <SettingsPageView />
   }
 }
