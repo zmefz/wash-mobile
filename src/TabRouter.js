@@ -1,4 +1,4 @@
 import { createBottomTabNavigator } from 'react-navigation'
-import tabsRoutesConfig from './tabsRoutesConfig'
+import tabsRoutes, { tabsRoutesConfig } from './tabsRoutes'
 
-export default createBottomTabNavigator(tabsRoutesConfig)
+export default createBottomTabNavigator(tabsRoutes, tabsRoutesConfig)
