@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Text, View } from 'react-native'
 
 export default class MainPageView extends React.Component {
-  static propTypes = {};
+  static propTypes = {}
 
   render() {
     return (

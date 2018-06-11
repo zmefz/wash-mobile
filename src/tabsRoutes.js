@@ -10,22 +10,22 @@ const tabs = [Main, Basket, Settings]
 const routes = tabs.reduce((hash, tab) => {
   hash[tab.name] = {
     screen: tab.component,
-  };
+  }
   return hash
-}, {});
+}, {})
 
 const tabsByName = tabs.reduce((hash, tab) => {
-  hash[tab.name] = tab;
+  hash[tab.name] = tab
   return hash
-}, {});
+}, {})
 
 export const tabsRoutesConfig = {
   navigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, tintColor }) => {
-      const { routeName } = navigation.state;
+      const { routeName } = navigation.state
 
-      const tab = tabsByName[routeName] || {};
-      const iconName = tab.iconName;
+      const tab = tabsByName[routeName] || {}
+      const iconName = tab.iconName
 
       return !!iconName && <Icon name={iconName} color={tintColor} />
     },
@@ -34,6 +34,6 @@ export const tabsRoutesConfig = {
     activeTintColor: 'blue',
     inactiveTintColor: 'gray',
   },
-};
+}
 
 export default routes
