@@ -5,7 +5,7 @@ import MainPageView from './MainPageView'
 
 // TODO: add @connect(store => ...)
 export default class MainPage extends React.Component {
-  static propTypes = {}
+  static propTypes = {};
 
   render() {
     return <MainPageView />
