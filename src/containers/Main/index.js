@@ -1,7 +1,7 @@
-import MainPage from './MainPage'
+import MainNavigator from './MainNavigator'
 
 export default {
   name: 'Main',
-  component: MainPage,
+  component: MainNavigator,
   iconName: 'home',
 }

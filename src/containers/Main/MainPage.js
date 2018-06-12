@@ -5,6 +5,10 @@ import MainPageView from './MainPageView'
 
 // TODO: add @connect(store => ...)
 export default class MainPage extends React.Component {
+  static navigationOptions = {
+    title: 'Main',
+  }
+
   static propTypes = {}
 
   render() {
