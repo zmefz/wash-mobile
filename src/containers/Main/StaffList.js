@@ -6,7 +6,7 @@ import { staffItem } from '../../common/propTypes'
 
 export default class StaffList extends React.Component {
   static propTypes = {
-    list: PropTypes.arrayOf(staffItem).isRequired,
+    items: PropTypes.arrayOf(staffItem).isRequired,
     editing: PropTypes.bool.isRequired,
   }
 
@@ -22,11 +22,11 @@ export default class StaffList extends React.Component {
   }
 
   render() {
-    const { list } = this.props
+    const { items } = this.props
 
     return (
       <FlatList
-        data={list}
+        data={items}
         renderItem={this.renderItem}
         keyExtractor={this._keyExtractor}
       />

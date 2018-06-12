@@ -9,14 +9,14 @@ const strings = allStrings.main
 
 export default class MainPageView extends React.Component {
   static propTypes = {
-    list: PropTypes.arrayOf(staffItem).isRequired,
+    items: PropTypes.arrayOf(staffItem).isRequired,
     editing: PropTypes.bool.isRequired,
     loading: PropTypes.bool.isRequired,
     error: PropTypes.string,
   }
 
   render() {
-    const { editing, list, loading, error } = this.props
+    const { editing, items, loading, error } = this.props
 
     return (
       <PageContainer
@@ -24,7 +24,7 @@ export default class MainPageView extends React.Component {
         loading={loading}
         error={error}
       >
-        <StaffList editing={editing} list={list} />
+        <StaffList editing={editing} items={items} />
       </PageContainer>
     )
   }

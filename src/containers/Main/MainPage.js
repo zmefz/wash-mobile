@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import { Button } from 'react-native'
 import { connect } from 'react-redux'
 import { staffItem } from '../../common/propTypes'
+import { fetchList } from '../../store/clothes/clothesActions'
 import MainPageView from './MainPageView'
 
 @connect(state => {
-  const { list, loading, error } = state.clothes
+  const { items, loading, error } = state.clothes
   return {
-    list,
+    items,
     loading,
     error,
   }
@@ -20,13 +21,13 @@ export default class MainPage extends React.Component {
   })
 
   static propTypes = {
-    list: PropTypes.arrayOf(staffItem),
+    items: PropTypes.arrayOf(staffItem),
     loading: PropTypes.bool.isRequired,
     error: PropTypes.string,
   }
 
   static defaultProps = {
-    list: [],
+    items: [],
     error: null,
   }
 
@@ -36,12 +37,17 @@ export default class MainPage extends React.Component {
 
   componentDidMount() {
     this.renderModeButton()
+    this.initiateListFetching()
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.editing !== this.state.editing) {
       this.renderModeButton()
     }
+  }
+
+  initiateListFetching() {
+    this.props.dispatch(fetchList())
   }
 
   renderModeButton() {
@@ -60,12 +66,12 @@ export default class MainPage extends React.Component {
 
   render() {
     const { editing } = this.state
-    const { list, loading, error } = this.props
+    const { items, loading, error } = this.props
 
     return (
       <MainPageView
         editing={editing}
-        list={list}
+        items={items}
         loading={loading}
         error={error}
       />
