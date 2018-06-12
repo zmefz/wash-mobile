@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Text, ScrollView } from 'react-native'
+import Title from '../../common/Title'
 
 export default class MainPageView extends React.Component {
   static propTypes = {}
@@ -10,7 +11,7 @@ export default class MainPageView extends React.Component {
 
     return (
       <ScrollView>
-        <Text>Main{editing ? ' (editing)' : ''}</Text>
+        <Title>Main{editing ? ' (editing)' : ''}</Title>
       </ScrollView>
     )
   }
