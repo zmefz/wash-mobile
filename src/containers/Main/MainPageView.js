@@ -16,7 +16,7 @@ export default class MainPageView extends React.Component {
   }
 
   render() {
-    const { editing, items, loading, error } = this.props
+    const { editing, items, loading, error, moveToBasket } = this.props
 
     return (
       <PageContainer
@@ -24,7 +24,11 @@ export default class MainPageView extends React.Component {
         loading={loading}
         error={error}
       >
-        <StaffList editing={editing} items={items} />
+        <StaffList
+          moveToBasket={moveToBasket}
+          editing={editing}
+          items={items}
+        />
       </PageContainer>
     )
   }

@@ -1,3 +1,8 @@
-import { cookCrudConstants } from '../../common/actionTypeCreator'
+import cookConstants from '../../common/actionTypeCreator'
 
-export default cookCrudConstants('CLOTHES')
+export default cookConstants('CLOTHES', {
+  LIST: 'api',
+  ITEM: {
+    TO_BASKET: 'api',
+  },
+})

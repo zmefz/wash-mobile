@@ -15,7 +15,7 @@ export default function PageContainer({
   const content = PageContainer.renderContent({ error, loading, children })
 
   return (
-    <ContainerComponent>
+    <ContainerComponent style={styles.container}>
       {!!title && <Title>{title}</Title>}
       {content}
     </ContainerComponent>

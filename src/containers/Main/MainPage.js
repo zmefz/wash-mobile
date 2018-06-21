@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Button } from 'react-native'
 import { connect } from 'react-redux'
 import { staffItem } from '../../common/propTypes'
-import { fetchList } from '../../store/clothes/clothesActions'
+import { fetchList, moveToBasket } from '../../store/clothes/clothesActions'
 import MainPageView from './MainPageView'
 
 @connect(state => {
@@ -64,12 +64,17 @@ export default class MainPage extends React.Component {
     this.setState(({ editing }) => ({ editing: !editing }))
   }
 
+  moveToBasket = item => {
+    this.props.dispatch(moveToBasket(item))
+  }
+
   render() {
     const { editing } = this.state
     const { items, loading, error } = this.props
 
     return (
       <MainPageView
+        moveToBasket={this.moveToBasket}
         editing={editing}
         items={items}
         loading={loading}

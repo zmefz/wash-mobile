@@ -4,4 +4,7 @@ export default StyleSheet.create({
   spinner: {
     padding: 20,
   },
+  container: {
+    flex: 1,
+  },
 })
